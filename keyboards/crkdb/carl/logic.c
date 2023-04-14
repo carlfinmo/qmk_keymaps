@@ -1,3 +1,11 @@
+void caps_word_set_user(bool active) {
+    if (is_keyboard_master()) {
+    oled_set_cursor(0, 1);
+    oled_write_P(active ? PSTR("CAPS: WORD") : PSTR("          "), false);
+    }
+}
+
+
 void oled_render_layer_state(void) {
   oled_write_P(PSTR("Layer: "), false);
   switch (get_highest_layer(layer_state | default_layer_state)) {

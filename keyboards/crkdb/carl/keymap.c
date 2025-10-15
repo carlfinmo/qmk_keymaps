@@ -18,7 +18,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
-#include "keycodes.h"
+/* #include "keycodes.h" */
+
+enum custom_keycodes {
+  QWERTY = SAFE_RANGE,
+  COLEMAK,
+};
+
+enum Layers {
+  _QW = 0,
+  _CM,
+  _L1,
+  _L2,
+  _L3,
+};
+
 #include "logic.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
